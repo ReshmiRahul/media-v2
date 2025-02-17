@@ -163,5 +163,27 @@
             </div>
         </div>
     </section>
+    <section class="contact-section">
+        <div class="contact-container">
+            <h2>Like to know more?</h2>
+            <p class="email">reshmi@gasdka.com</p>
+            <div class="contact-details">
+                <p class="contact-title">Humber College</p>
+                <p class="contact-info">North Campus, Toronto, M8V 1K8</p>
+            </div>
+        </div>
+    </section>
+    <footer class="footer-section">
+        <div class="footer-container">
+        <img src="{{ asset('images/logo.png') }}" alt="Footer Logo" class="footer-logo">
+            <nav class="footer-nav">
+                <a href="#" class="footer-link">Home</a>
+                <a href="#" class="footer-link">About</a>
+                <a href="#" class="footer-link">Gallery</a>
+                <a href="#" class="footer-link">Contact</a>
+            </nav>
+            <div class="footer-copy">© 2025 BrickMMO</div>
+        </div>
+    </footer>
 </body>
 </html>
