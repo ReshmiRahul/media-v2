@@ -179,7 +179,7 @@
         <div class="footer-container">
             <img src="{{ asset('images/logo.png') }}" alt="Footer Logo" class="footer-logo">
             <nav class="footer-nav">
-                <a href="#" class="footer-link">Home</a>
+                <a href="/" class="footer-link">Home</a>
                 <a href="/about" class="footer-link">About</a>
                 <a href="#" class="footer-link">Gallery</a>
                 <a href="#" class="footer-link">Contact</a>

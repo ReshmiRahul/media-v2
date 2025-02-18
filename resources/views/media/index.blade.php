@@ -22,6 +22,11 @@
                     <a href="https://lh3.googleusercontent.com/d/{{ $item->google_id }}" download="image-{{ $item->google_id }}.jpg">
         Download Image
     </a>
+    <iframe width="560" height="315" 
+    src="https://drive.google.com/file/d/1L85DXt8FnGmOHGugNaGU4xGfS9QygGV_/preview" 
+    allowfullscreen>
+</iframe>
+
 </td>
                     <td>{{ $item->name }}</td>
                     <td>{{ $item->approved }}</td>
