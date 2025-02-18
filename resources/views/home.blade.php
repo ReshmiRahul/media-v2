@@ -6,24 +6,49 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <title>Home Page</title>
     @vite(['resources/css/app.css'])
-
+    @vite(['resources/css/home.css'])
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const images = [
-                '{{ asset('images/img1.png') }}',
-                '{{ asset('images/img4.jpg') }}',
-                '{{ asset('images/img3.jpg') }}'
-            ];
+    document.addEventListener("DOMContentLoaded", function() {
+        // Background Image Rotation
+        const images = [
+            '{{ asset('images/img1.png') }}',
+            '{{ asset('images/img4.jpg') }}',
+            '{{ asset('images/img3.jpg') }}'
+        ];
 
-            function changeBackgroundImage() {
-                const randomIndex = Math.floor(Math.random() * images.length);
-                document.querySelector('.hero-section').style.backgroundImage = `url('${images[randomIndex]}')`;
-            }
+        function changeBackgroundImage() {
+            const randomIndex = Math.floor(Math.random() * images.length);
+            document.querySelector('.hero-section').style.backgroundImage = `url('${images[randomIndex]}')`;
+        }
 
-            setInterval(changeBackgroundImage, 5000);
-            changeBackgroundImage();
+        setInterval(changeBackgroundImage, 5000);
+        changeBackgroundImage();
+
+        // Sidebar Menu Toggle
+        const menuIcon = document.querySelector(".menu-icon");
+        const sideMenu = document.querySelector(".side-menu");
+        const closeMenu = document.querySelector(".close-menu");
+
+        // Open menu when clicking the menu icon
+        menuIcon.addEventListener("click", function(event) {
+            event.stopPropagation(); // Prevents click from bubbling up
+            sideMenu.classList.add("active");
         });
-    </script>
+
+        // Close menu when clicking the close button
+        closeMenu.addEventListener("click", function() {
+            sideMenu.classList.remove("active");
+        });
+
+        // Close menu when clicking outside of it
+        document.addEventListener("click", function(event) {
+            if (!sideMenu.contains(event.target) && !menuIcon.contains(event.target)) {
+                sideMenu.classList.remove("active");
+            }
+        });
+    });
+</script>
+
 </head>
 <body>
     <header class="navbar">
@@ -33,6 +58,16 @@
         <div class="menu-icon">
             <img src="{{ asset('images/menus.png') }}" alt="Menu Icon">
         </div>
+        <!-- Side Menu -->
+        <div class="side-menu">
+            <div class="close-menu">&times;</div>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+        </div>
+
     </header>
 
     <section class="hero-section">
@@ -90,54 +125,12 @@
         <div class="about-content">
             <h2>EXPLORE & DOWNLOAD,<br>INSPIRE & CONNECT</h2>
             <p>Welcome to BrickMMO Media Hub, your go-to platform <br> for accessing high-quality media related to the <br> BrickMMO project. Our mission is to provide an extensive <br> library of images, videos, and audio that showcase the <br> creativity and impact of BrickMMO participants and <br>organizations. Explore, download, and share these <br> moments to inspire and connect with the community!</p>
-            
-            <div class="svg-button">
-            <div data-svg-wrapper>
-                <svg width="383" height="244" viewBox="0 0 383 244" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g filter="url(#filter0_dddddd_289_92)">
-                <path d="M283.045 57.9802C281.459 61.6349 277.855 63.9998 273.871 63.9998H90.078C84.5551 63.9998 80.0779 59.5226 80.0779 53.9998V11.5094C80.0779 5.98656 84.5551 1.50941 90.0779 1.50941H292.307C299.506 1.50941 304.346 8.88618 301.481 15.4898L283.045 57.9802Z" fill="#010101"/>
-                <path d="M282.586 57.7811C281.079 61.2532 277.656 63.4998 273.871 63.4998H90.078C84.8313 63.4998 80.5779 59.2465 80.5779 53.9998V11.5094C80.5779 6.2627 84.8312 2.00941 90.0779 2.00941H292.307C299.146 2.00941 303.744 9.01734 301.022 15.2908L282.586 57.7811Z" stroke="#EF2121"/>
-                </g>
-                <defs>
-                <filter id="filter0_dddddd_289_92" x="0.078125" y="0.213225" width="382.238" height="243.787" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-                <feOffset dy="1.85185"/>
-                <feGaussianBlur stdDeviation="1.57407"/>
-                <feColorMatrix type="matrix" values="0 0 0 0 0.266667 0 0 0 0 0.266667 0 0 0 0 0.266667 0 0 0 0.0240741 0"/>
-                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_289_92"/>
-                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-                <feOffset dy="8.14815"/>
-                <feGaussianBlur stdDeviation="3.25926"/>
-                <feColorMatrix type="matrix" values="0 0 0 0 0.266667 0 0 0 0 0.266667 0 0 0 0 0.266667 0 0 0 0.0392593 0"/>
-                <feBlend mode="normal" in2="effect1_dropShadow_289_92" result="effect2_dropShadow_289_92"/>
-                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-                <feOffset dy="20"/>
-                <feGaussianBlur stdDeviation="6.5"/>
-                <feColorMatrix type="matrix" values="0 0 0 0 0.266667 0 0 0 0 0.266667 0 0 0 0 0.266667 0 0 0 0.05 0"/>
-                <feBlend mode="normal" in2="effect2_dropShadow_289_92" result="effect3_dropShadow_289_92"/>
-                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-                <feOffset dy="38.5185"/>
-                <feGaussianBlur stdDeviation="12.7407"/>
-                <feColorMatrix type="matrix" values="0 0 0 0 0.266667 0 0 0 0 0.266667 0 0 0 0 0.266667 0 0 0 0.0607407 0"/>
-                <feBlend mode="normal" in2="effect3_dropShadow_289_92" result="effect4_dropShadow_289_92"/>
-                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-                <feOffset dy="64.8148"/>
-                <feGaussianBlur stdDeviation="23.4259"/>
-                <feColorMatrix type="matrix" values="0 0 0 0 0.266667 0 0 0 0 0.266667 0 0 0 0 0.266667 0 0 0 0.0759259 0"/>
-                <feBlend mode="normal" in2="effect4_dropShadow_289_92" result="effect5_dropShadow_289_92"/>
-                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-                <feOffset dy="100"/>
-                <feGaussianBlur stdDeviation="40"/>
-                <feColorMatrix type="matrix" values="0 0 0 0 0.266667 0 0 0 0 0.266667 0 0 0 0 0.266667 0 0 0 0.1 0"/>
-                <feBlend mode="normal" in2="effect5_dropShadow_289_92" result="effect6_dropShadow_289_92"/>
-                <feBlend mode="normal" in="SourceGraphic" in2="effect6_dropShadow_289_92" result="shape"/>
-                </filter>
-                </defs>
-                </svg>
-            </div>
-                <div class="about">About us</div>
-            </div>
+            <a href="{{ url('/about') }}" style="text-decoration: none; color: inherit;">
+                <div class="about-button">
+                    <div class="about">About us</div>
+                </div>
+            </a>
+                        
         </div>
     </section>
     <section class="explore-section">
@@ -178,7 +171,7 @@
         <img src="{{ asset('images/logo.png') }}" alt="Footer Logo" class="footer-logo">
             <nav class="footer-nav">
                 <a href="#" class="footer-link">Home</a>
-                <a href="#" class="footer-link">About</a>
+                <a href="/about" class="footer-link">About</a>
                 <a href="#" class="footer-link">Gallery</a>
                 <a href="#" class="footer-link">Contact</a>
             </nav>

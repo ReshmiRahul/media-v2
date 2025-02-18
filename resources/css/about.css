@@ -1,0 +1,361 @@
+/* About Us Section with Background Video */
+.about-section {
+    position: relative;
+    width: 100%;
+    height: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Video Styling */
+.about-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+}
+
+/* Dark Overlay for Better Readability */
+.about-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* About Us Text */
+.about-title {
+    color: white;
+    font-size: 90px;
+    font-family: 'PT Serif', serif;
+    font-weight: 200;
+    line-height: 90px;
+    letter-spacing: 30px;
+    text-align: center;
+    z-index: 1;
+}
+
+/* Who We Are Section */
+.who-we-are-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #242121;
+    padding: 50px 0;
+}
+
+.who-we-are-container {
+    width: 1280px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+}
+
+/* Left Side: Images */
+.who-we-are-images {
+    position: relative;
+    width: 630px;
+    height: 521px;
+}
+
+.image1 {
+    width: 330px;
+    height: 378px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+.image2 {
+    width: 300px;
+    height: 378px;
+    position: absolute;
+    left: 360px;
+    top: 117px;
+    border-radius: 10px;
+}
+
+.image3 {
+    width: 159px;
+    height: 123px;
+    position: absolute;
+    left: 370px;
+    bottom: 420px;
+    border-radius: 13px;
+}
+
+.image4 {
+    width: 159px;
+    height: 123px;
+    position: absolute;
+    left: 150px;
+    bottom: -10px;
+    border-radius: 13px;
+}
+
+
+/* Right Side: Text Content */
+.who-we-are-content {
+    width: 50%;
+    max-width: 504px;
+    color: #F2DADA;
+}
+
+.who-we-are-title {
+    font-size: 48px;
+    font-family: 'PT Serif', serif;
+    font-weight: 700;
+    line-height: 65px;
+    letter-spacing: 5px;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.who-we-are-intro {
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    line-height: 29px;
+}
+
+.who-we-are-text,
+.who-we-are-mission {
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    line-height: 29px;
+}
+
+/* Key Features Section */
+.key-features-section {
+    background-color: black;
+    position: relative;
+    width: 100%;
+    height: 850px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Background Image */
+.key-features-bg {
+    position: absolute;
+    width: 1923px;
+    height: 1749px;
+    top: -167px;
+    left: 1px;
+    object-fit: cover;
+    z-index: 0;
+    opacity: 50%;
+}
+
+/* Content Container */
+.key-features-content {
+    position: absolute;
+    width: 578px;
+    left: 91px;
+    top: 152px;
+    z-index: 1;
+}
+
+/* Title */
+.key-features-title {
+    font-size: 48px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    color: white;
+    line-height: 29px;
+    margin-top: 0px;
+}
+
+/* Features List */
+.key-features-list {
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    color: #F2DADA;
+    line-height: 29px;
+    list-style: none;
+    padding-left: 0;
+}
+
+.key-features-list li {
+    margin-bottom: 15px;
+}
+/* How It Works Section */
+.how-it-works-section {
+    width: 100%;
+    background: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0;
+}
+
+.how-it-works-container {
+    width: 1152px;
+    padding: 33px 81px 7px 47px;
+    text-align: left;
+}
+
+.how-it-works-title {
+    font-size: 48px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    color: white;
+    line-height: 29px;
+    margin-bottom: 15px;
+}
+
+.how-it-works-description {
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    color: #F2DADA;
+    line-height: 40px;
+}
+
+/* Why BrickMMO Media Hub? Section */
+.why-brickmmo-section {
+    position: relative;
+    background-color: black;
+    width: 100%;
+    height: 670px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Background Image */
+.why-brickmmo-bg {
+    position: absolute;
+    width: 1683px;
+    height: 902px;
+    left: -201px;
+    top: -156px;
+    object-fit: cover;
+    opacity: 0.7;
+    z-index: 0;
+}
+
+/* Content Container */
+.why-brickmmo-content {
+    position: absolute;
+    width: 739px;
+    left: 569px;
+    top: 85px;
+    z-index: 1;
+    text-align: left;
+}
+
+/* Title */
+.why-brickmmo-title {
+    font-size: 48px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    color: white;
+    line-height: 29px;
+    margin-bottom: 20px;
+}
+
+/* Description */
+.why-brickmmo-description {
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    color: #F2DADA;
+    line-height: 35px;
+    margin-bottom: 20px;
+}
+
+/* Features List */
+.why-brickmmo-features {
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    color: #F2DADA;
+    line-height: 35px;
+    list-style: none;
+    padding-left: 0;
+}
+
+.why-brickmmo-features li {
+    margin-bottom: 15px;
+}
+
+/* Join the Community Section */
+.join-community-section {
+    position: relative;
+    background-color: #000000;
+    width: 100%;
+    height: 547px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Background Image */
+.join-community-bg {
+    position: absolute;
+    width: 1638px;
+    height: 1092px;
+    top: -391px;
+    left: 0px;
+    object-fit: cover;
+    opacity: 0.34;
+    z-index: 0;
+}
+
+/* Content Container */
+.join-community-content {
+    position: absolute;
+    width: 716px;
+    left: 56px;
+    top: 79px;
+    z-index: 1;
+    text-align: left;
+}
+
+/* Title */
+.join-community-title {
+    font-size: 48px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    color: white;
+    line-height: 29px;
+    margin-bottom: 20px;
+}
+
+/* Description */
+.join-community-description {
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    color: #F2DADA;
+    line-height: 34px;
+    margin-bottom: 20px;
+}
+
+/* Contact & Support */
+.join-community-contact {
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    color: #F2DADA;
+    line-height: 34px;
+}
