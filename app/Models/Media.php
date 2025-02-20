@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Media extends Model
 {
@@ -12,5 +13,9 @@ class Media extends Model
     public function tags()
     {
         return $this->belongsToMany(\App\Models\Tag::class, 'media_tag', 'medium_id', 'tag_id');
+    }
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'uploaded_by'); // Ensure 'uploaded_by' is the correct foreign key
     }
 }

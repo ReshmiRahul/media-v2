@@ -13,3 +13,4 @@ Route::get('/media', [MediaController::class, 'index']);
 Route::get('/about', [AboutController::class, 'index'])->name('about');
 Route::get('/image-gallery', [ImagesController::class, 'index'])->name('image.gallery');
 Route::get('/video-gallery', [VideosController::class, 'index']);
+Route::get('/search', [HomeController::class, 'search'])->name('search');
