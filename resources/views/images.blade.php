@@ -11,8 +11,10 @@
 </head>
 <body>
     <header class="navbar">
-        <div class="logo">
-            <img src="{{ asset('images/logo.png') }}" alt="Logo">
+    <div class="logo">
+            <a href="/">
+                <img src="{{ asset('images/logo.png') }}" alt="Logo">
+            </a>
         </div>
         <div class="menu-icon">
             <img src="{{ asset('images/menus.png') }}" alt="Menu Icon">
@@ -20,9 +22,11 @@
         <div class="side-menu">
             <div class="close-menu">&times;</div>
             <ul>
-                <li><a href="/">Home</a></li>
+                 <li><a href="/">Home</a></li>
                 <li><a href="/about">About</a></li>
-                <li><a href="#">Gallery</a></li>
+                <li><a href="/image-gallery">Image-Gallery</a></li>
+                <li><a href="/video-gallery">Video-Gallery</a></li>
+                <li><a href="/audio-gallery">Audio-Gallery</a></li>
             </ul>
         </div>
     </header>
@@ -78,12 +82,13 @@
     </section>
     <footer class="footer-section">
         <div class="footer-container">
-        <img src="{{ asset('images/logo.png') }}" alt="Footer Logo" class="footer-logo">
+        <a href="/">
+                <img src="{{ asset('images/logo.png') }}" alt="Footer Logo" class="footer-logo">
+            </a>
             <nav class="footer-nav">
-                <a href="#" class="footer-link">Home</a>
+                <a href="/" class="footer-link">Home</a>
                 <a href="/about" class="footer-link">About</a>
-                <a href="#" class="footer-link">Gallery</a>
-                <a href="#" class="footer-link">Contact</a>
+                <a href="#contact-section" class="footer-link">Contact</a>
             </nav>
             <div class="footer-copy">© 2025 BrickMMO</div>
         </div>

@@ -33,8 +33,10 @@
 </head>
 <body>
     <header class="navbar">
-        <div class="logo">
-            <img src="{{ asset('images/logo.png') }}" alt="Logo">
+    <div class="logo">
+            <a href="/">
+                <img src="{{ asset('images/logo.png') }}" alt="Logo">
+            </a>
         </div>
         <div class="menu-icon">
             <img src="{{ asset('images/menus.png') }}" alt="Menu Icon">
@@ -44,7 +46,9 @@
             <ul>
                 <li><a href="/">Home</a></li>
                 <li><a href="/about">About</a></li>
-                <li><a href="#">Gallery</a></li>
+                <li><a href="/image-gallery">Image-Gallery</a></li>
+                <li><a href="/video-gallery">Video-Gallery</a></li>
+                <li><a href="/audio-gallery">Audio-Gallery</a></li>
             </ul>
         </div>
     </header>
@@ -52,7 +56,7 @@
     <!-- About Us Section with Background Video -->
     <section class="about-section">
         <video autoplay muted loop playsinline class="about-video">
-            <source src="{{ asset('videos/city-pan-4.mp4') }}" type="video/mp4">
+            <source src="{{ asset('videos/train-2.mp4') }}" type="video/mp4">
             Your browser does not support the video tag.
         </video>
         <div class="about-overlay">
@@ -65,8 +69,8 @@
         <div class="who-we-are-container">
             <!-- Left Side: Images -->
             <div class="who-we-are-images">
-                <img class="image1" src="{{ asset('images/img2.webp') }}" alt="Image 1">
-                <img class="image2" src="{{ asset('images/about6.png') }}" alt="Image 2">
+                <img class="image1" src="{{ asset('images/city-5.jpg.jpg') }}" alt="Image 1">
+                <img class="image2" src="{{ asset('images/hallway-01-jpg.jpg') }}" alt="Image 2">
                 <img class="image3" src="{{ asset('images/about3.jpg') }}" alt="Small Image">
                 <img class="image4" src="{{ asset('images/about4.jpg') }}" alt="Image 4">
             </div>
@@ -91,7 +95,7 @@
     <section class="key-features-section">
         <div class="key-features-container">
             <!-- Background Image -->
-            <img class="key-features-bg" src="{{ asset('images/about8.webp') }}" alt="Key Features Background">
+            <img class="key-features-bg" src="{{ asset('images/pixy-trees.jpeg.jpg') }}" alt="Key Features Background">
 
             <!-- Content -->
             <div class="key-features-content">
@@ -123,7 +127,7 @@
     <section class="why-brickmmo-section">
         <div class="why-brickmmo-container">
             <!-- Background Image -->
-            <img class="why-brickmmo-bg" src="{{ asset('images/about9.jpeg') }}" alt="Why BrickMMO Background">
+            <img class="why-brickmmo-bg" src="{{ asset('images/pixy2.jpeg.jpg') }}" alt="Why BrickMMO Background">
 
             <!-- Content -->
             <div class="why-brickmmo-content">
@@ -177,12 +181,14 @@
     <!-- Footer -->
     <footer class="footer-section">
         <div class="footer-container">
-            <img src="{{ asset('images/logo.png') }}" alt="Footer Logo" class="footer-logo">
+            <a href="/">
+                <img src="{{ asset('images/logo.png') }}" alt="Footer Logo" class="footer-logo">
+            </a>
+
             <nav class="footer-nav">
                 <a href="/" class="footer-link">Home</a>
                 <a href="/about" class="footer-link">About</a>
-                <a href="#" class="footer-link">Gallery</a>
-                <a href="#" class="footer-link">Contact</a>
+                <a href="#contact-section" class="footer-link">Contact</a>
             </nav>
             <div class="footer-copy">© 2025 BrickMMO</div>
         </div>

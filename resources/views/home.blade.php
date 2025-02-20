@@ -12,7 +12,7 @@
         // Background Image Rotation
         const images = [
             '{{ asset('images/img1.png') }}',
-            '{{ asset('images/img4.jpg') }}',
+            '{{ asset('images/pixy-trees.jpeg.jpg') }}',
             '{{ asset('images/img3.jpg') }}'
         ];
 
@@ -79,8 +79,10 @@
 </head>
 <body>
     <header class="navbar">
-        <div class="logo">
-            <img src="{{ asset('images/logo.png') }}" alt="Logo">
+    <div class="logo">
+            <a href="/">
+                <img src="{{ asset('images/logo.png') }}" alt="Logo">
+            </a>
         </div>
         <div class="menu-icon">
             <img src="{{ asset('images/menus.png') }}" alt="Menu Icon">
@@ -91,7 +93,9 @@
             <ul>
                 <li><a href="/">Home</a></li>
                 <li><a href="/about">About</a></li>
-                <li><a href="/">Gallery</a></li>
+                <li><a href="/image-gallery">Image-Gallery</a></li>
+                <li><a href="/video-gallery">Video-Gallery</a></li>
+                <li><a href="/audio-gallery">Audio-Gallery</a></li>
             </ul>
         </div>
 
@@ -158,12 +162,19 @@
         <div class="explore-container">
         <img src="{{ asset('images/img7.jpg') }}" alt="Explore Content Background">
             <div class="explore-content">
-                <h2>EXPLORE THE <br>CONTENT</h2>
-                <div class="explore-options">
-                    <div class="explore-item">Images</div>
-                    <div class="explore-item">Videos</div>
-                    <div class="explore-item">Audios</div>
-                </div>
+            <h2>EXPLORE THE <br>CONTENT</h2>
+<div class="explore-options">
+    <a href="/image-gallery" class="explore-link">
+        <div class="explore-item">Images</div>
+    </a>
+    <a href="/video-gallery" class="explore-link">
+        <div class="explore-item">Videos</div>
+    </a>
+    <a href="/audio-gallery" class="explore-link">
+        <div class="explore-item">Audios</div>
+    </a>
+</div>
+
             </div>
         </div>
     </section>
@@ -173,7 +184,6 @@
             <div class="discover-content">
                 <h2>DISCOVER<br>TOP PICKS</h2>
                 <p>Explore our curated collection of top-rated images, videos, and audios designed to spark your creativity.</p>
-                <div class="discover-button">More</div>
             </div>
         </div>
     </section>
@@ -189,12 +199,13 @@
     </section>
     <footer class="footer-section">
         <div class="footer-container">
-        <img src="{{ asset('images/logo.png') }}" alt="Footer Logo" class="footer-logo">
+        <a href="/">
+                <img src="{{ asset('images/logo.png') }}" alt="Footer Logo" class="footer-logo">
+            </a>
             <nav class="footer-nav">
-                <a href="#" class="footer-link">Home</a>
+                <a href="/" class="footer-link">Home</a>
                 <a href="/about" class="footer-link">About</a>
-                <a href="#" class="footer-link">Gallery</a>
-                <a href="#" class="footer-link">Contact</a>
+                <a href="#contact-section" class="footer-link">Contact</a>
             </nav>
             <div class="footer-copy">© 2025 BrickMMO</div>
         </div>
