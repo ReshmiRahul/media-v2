@@ -14,8 +14,10 @@ class Media extends Model
     {
         return $this->belongsToMany(\App\Models\Tag::class, 'media_tag', 'medium_id', 'tag_id');
     }
-    public function user()
+
+    // Fix: Use 'user_id' instead of 'uploaded_by'
+    public function user(): BelongsTo
     {
-        return $this->belongsTo(User::class, 'uploaded_by'); // Ensure 'uploaded_by' is the correct foreign key
+        return $this->belongsTo(User::class, 'user_id'); // Use 'user_id' instead of 'uploaded_by'
     }
 }

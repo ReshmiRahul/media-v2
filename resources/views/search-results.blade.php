@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@700&display=swap" rel="stylesheet">
-    <title>Video Gallery</title>
+    <title>Our Collections</title>
     @vite(['resources/css/app.css']) 
     @vite(['resources/css/search-results.css']) 
 </head>
@@ -35,7 +35,7 @@
             Your browser does not support the video tag.
         </video>
         <div class="about-overlay">
-            <h2 class="about-title">VIDEO GALLERY</h2>
+            <h2 class="about-title">OUR COLLECTIONS</h2>
         </div>
     </section>
     <section class="disclaimer">
@@ -68,9 +68,18 @@
                         <div class="circle">+</div>
                     </div>
                 </div>
-            @empty
-                <p>No media found.</p>
-            @endforelse
+                @empty
+    <div class="no-media-container">
+        <div class="no-media-image"></div>
+        <h2 class="no-media-title">Oops! No media available.</h2>
+        <p class="no-media-text">
+            It looks like there are no items in this category right now. <br>
+            Check back later or explore other galleries!
+        </p>
+        <a href="/" class="back-home-btn">Go Back to Home</a>
+    </div>
+@endforelse
+
         </div>
     </section>
     
@@ -133,8 +142,8 @@
         document.getElementById('modalDetails').innerHTML = `
             <div class="modal-info">
                 <p><strong>Type:</strong> ${mediaItem.type}</p>
-                <p><strong>Uploaded By:</strong> ${mediaItem.first} ${mediaItem.last}</p>
-                <p><strong>Email:</strong> <a href="mailto:${mediaItem.email}">${mediaItem.email}</a></p>
+                <p><strong>Uploaded By:</strong> ${mediaItem.user ? `${mediaItem.user.first} ${mediaItem.user.last}` : 'Unknown'}</p>
+                <p><strong>Email:</strong> <a href="mailto:${mediaItem.user ? mediaItem.user.email : ''}">${mediaItem.user ? mediaItem.user.email : 'N/A'}</a></p>
                 <p><strong>Uploaded On:</strong> ${new Date(mediaItem.created_at).toLocaleDateString()}</p>
             </div>
         `;
@@ -157,11 +166,7 @@
             videoElement.src = mediaUrl;
             videoElement.style.display = 'block';
 
-            setTimeout(() => {
-                videoElement.onerror = function () {
-                    alert("Video preview failed. Please try downloading instead.");
-                };
-            }, 1000);
+           
         } 
         else if (mediaItem.type === 'audio') {
             mediaUrl = `https://drive.google.com/uc?export=view&id=${mediaItem.google_id}`;
@@ -169,11 +174,7 @@
             audioElement.src = mediaUrl;
             audioElement.style.display = 'block';
 
-            setTimeout(() => {
-                audioElement.onerror = function () {
-                    alert("Audio preview not available. Try downloading instead.");
-                };
-            }, 1000);
+            
         }
 
         document.getElementById('downloadLink').onclick = function(event) {
@@ -206,20 +207,7 @@
         link.click();
         document.body.removeChild(link);
     }
-    function updateModalContent() {
-    const mediaItem = mediaItems[currentIndex];
-
-    document.getElementById('modalTitle').innerText = mediaItem.name;
-    document.getElementById('modalDetails').innerHTML = `
-        <div class="modal-info">
-            <p><strong>Type:</strong> ${mediaItem.type}</p>
-            <p><strong>Uploaded By:</strong> ${mediaItem.user ? `${mediaItem.user.first_name} ${mediaItem.user.last_name}` : 'Unknown'}</p>
-            <p><strong>Email:</strong> <a href="mailto:${mediaItem.user ? mediaItem.user.email : ''}">${mediaItem.user ? mediaItem.user.email : 'N/A'}</a></p>
-            <p><strong>Uploaded On:</strong> ${new Date(mediaItem.created_at).toLocaleDateString()}</p>
-        </div>
-    `;
-}
-
+    
 </script>
 
 

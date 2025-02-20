@@ -48,19 +48,32 @@
     @foreach($data as $index => $item)
         <div class="video-container" onclick="openModal({{ $index }})">
             <div class="loader"></div>
-            <iframe width="250" height="150" 
-                src="https://drive.google.com/file/d/{{ $item->google_id }}/preview"
+
+            <!-- Thumbnail Image -->
+            <img id="thumbnail{{ $index }}" class="video-thumbnail" 
+                src="https://drive.google.com/thumbnail?id={{ $item->google_id }}&sz=w250" 
+                alt="Video Thumbnail" 
+                onclick="showVideo({{ $index }})">
+            
+            <!-- Video iframe (Initially Hidden) -->
+            <iframe id="video{{ $index }}" class="video-frame" width="250" height="150" 
+                src="" 
                 allowfullscreen 
-                onload="hideLoader(this)">
+                onload="hideLoader(this)" 
+                style="display: none;">
             </iframe>
+
+            <!-- Play Button Overlay -->
+            <div class="play-button" onclick="showVideo({{ $index }})">&#9658;</div>
+
             <div class="overlay">
                 <p>{{ $item->name }}</p>
                 <div class="circle">+</div>
             </div>
         </div>
     @endforeach
+</section>
 
-    </section>
     <section class="modal" id="videoModal">
         <button class="close" onclick="closeModal()">&times;</button>
         <button class="prev" onclick="prevVideo()">&#10094;</button>
@@ -120,9 +133,16 @@
         });
         let videos = @json($data);
         let currentIndex = 0;
+
         function openModal(index) {
             currentIndex = index;
-            document.getElementById('modalVideo').src = `https://drive.google.com/file/d/${videos[index].google_id}/preview?autoplay=1`;
+            let modalVideo = document.getElementById('modalVideo');
+
+            // Ensure video loads correctly inside an iframe
+            let videoUrl = `https://drive.google.com/file/d/${videos[index].google_id}/preview`;
+            modalVideo.src = videoUrl;
+
+            // Set modal title & details
             document.getElementById('modalTitle').innerText = videos[index].name;
             document.getElementById('modalDetails').innerHTML = `
                 <div class="modal-info">
@@ -134,28 +154,52 @@
                 </div>
             `;
 
-            let videoUrl = `https://drive.google.com/uc?export=download&id=${videos[index].google_id}`;
-            let videoName = `${videos[index].name.replace(/\s+/g, '_')}.mp4`; 
-
+            // Set download link correctly
             let downloadBtn = document.getElementById('downloadLink');
-            downloadBtn.href = videoUrl;
+            let downloadUrl = `https://drive.google.com/uc?export=download&id=${videos[index].google_id}`;
+            let videoName = `${videos[index].name.replace(/\s+/g, '_')}.mp4`;
+
+            downloadBtn.href = downloadUrl;
             downloadBtn.download = videoName;
 
             document.getElementById('videoModal').style.display = 'flex';
         }
         function hideLoader(iframe) {
-            let loader = iframe.previousElementSibling; // Get the loader div
-            if (loader) loader.style.display = 'none'; // Hide the loader
-            iframe.style.visibility = 'visible'; // Show the video
-        }
+                    let loader = iframe.previousElementSibling; // Get the loader div
+                    if (loader) loader.style.display = 'none'; // Hide the loader
+                    iframe.style.visibility = 'visible'; // Show the video
+                }
+                function showVideo(index) {
+    let thumbnail = document.getElementById(`thumbnail${index}`);
+    let videoFrame = document.getElementById(`video${index}`);
+
+    // Replace thumbnail with the video preview
+    videoFrame.src = `https://drive.google.com/file/d/${videos[index].google_id}/preview`;
+    videoFrame.style.display = "block";
+    
+    // Hide the thumbnail
+    thumbnail.style.display = "none";
+
+    // Hide play button overlay
+    let playButton = thumbnail.nextElementSibling;
+    if (playButton) playButton.style.display = "none";
+}
+
+function hideLoader(iframe) {
+    let loader = iframe.previousElementSibling;
+    if (loader) loader.style.display = "none"; // Hide the loader
+    iframe.style.visibility = "visible"; // Show the video
+}
+
 
         function closeModal() { 
-            document.getElementById('modalVideo').src = ""; 
+            document.getElementById('modalVideo').src = ""; // Reset video source
             document.getElementById('videoModal').style.display = 'none'; 
         }
 
         function prevVideo() { if (currentIndex > 0) openModal(currentIndex - 1); }
         function nextVideo() { if (currentIndex < videos.length - 1) openModal(currentIndex + 1); }
+
     </script>
 </body>
 </html>
