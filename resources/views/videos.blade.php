@@ -31,7 +31,7 @@
     <!-- About Us Section with Background Video -->
     <section class="about-section">
         <video autoplay muted loop playsinline class="about-video">
-            <source src="{{ asset('videos/train-pov.mp4') }}" type="video/mp4">
+            <source src="{{ asset('videos/city-pan-1.mp4') }}" type="video/mp4">
             Your browser does not support the video tag.
         </video>
         <div class="about-overlay">
