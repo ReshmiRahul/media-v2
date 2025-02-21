@@ -127,7 +127,7 @@
     <section class="why-brickmmo-section">
         <div class="why-brickmmo-container">
             <!-- Background Image -->
-            <img class="why-brickmmo-bg" src="{{ asset('images/pixy2.jpeg.jpg') }}" alt="Why BrickMMO Background">
+            <img class="why-brickmmo-bg" src="{{ asset('images/city-square-1.jpg.jpg') }}" alt="Why BrickMMO Background">
 
             <!-- Content -->
             <div class="why-brickmmo-content">

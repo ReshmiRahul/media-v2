@@ -12,7 +12,7 @@
         // Background Image Rotation
         const images = [
             '{{ asset('images/hallway-01-jpg.jpg') }}',
-            '{{ asset('images/mini-me-12.jpg.jpg') }}',
+            '{{ asset('images/foundation-1.jpg.jpg') }}',
             '{{ asset('images/pixy-trees.jpeg.jpg') }}'
         ];
 
@@ -162,7 +162,7 @@
     </section>
     <section class="explore-section">
         <div class="explore-container">
-        <img src="{{ asset('images/pixy2.jpeg.jpg') }}" alt="Explore Content Background">
+        <img src="{{ asset('images/city-5.jpg.jpg') }}" alt="Explore Content Background">
             <div class="explore-content">
             <h2>EXPLORE THE <br>CONTENT</h2>
 <div class="explore-options">

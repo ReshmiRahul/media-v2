@@ -236,7 +236,7 @@
     object-fit: cover;
     top: 0;
     margin-left: 118px;/* Adjust how much the image shifts left */
-    opacity: 0.4;
+    opacity: 0.3;
     z-index: -1;
 }
 
@@ -314,9 +314,11 @@
     object-fit: cover;
     position: absolute;
     top: 0;
+    opacity: 30%;
     left: 114;
     z-index: 0;
-    margin-left: -280px;
+    margin-left: -180px;
+
 }
 
 .explore-content {
