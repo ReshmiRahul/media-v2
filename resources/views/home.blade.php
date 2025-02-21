@@ -11,9 +11,9 @@
     document.addEventListener("DOMContentLoaded", function() {
         // Background Image Rotation
         const images = [
-            '{{ asset('images/img1.png') }}',
-            '{{ asset('images/pixy-trees.jpeg.jpg') }}',
-            '{{ asset('images/img3.jpg') }}'
+            '{{ asset('images/hallway-01-jpg.jpg') }}',
+            '{{ asset('images/mini-me-12.jpg.jpg') }}',
+            '{{ asset('images/pixy-trees.jpeg.jpg') }}'
         ];
 
         function changeBackgroundImage() {
@@ -102,18 +102,20 @@
     </header>
 
     <section class="hero-section">
-        <h1>BrickMMO Media Hub: <br> Building Smart Cities, One Innovation at a Time!</h1>
-        <p class="scroll-text">Scroll for more</p>
-        <div class="arrow">
-            <svg xmlns="http://www.w3.org/2000/svg" width="21" height="31" viewBox="0 0 21 31" fill="none">
-                <path d="M10.5013 30.375V1M10.5013 30.375C7.81706 30.375 2.80216 24.5167 0.917969 23.0313M10.5013 30.375C13.1855 30.375 18.2004 24.5167 20.0846 23.0312" stroke="#FFFBFB" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-        </div>
-    </section>
+    <div class="hero-overlay"></div> <!-- Overlay Added -->
+    <h1>BrickMMO Media Hub: <br> Building Smart Cities, One Innovation at a Time!</h1>
+    <p class="scroll-text">Scroll for more</p>
+    <div class="arrow">
+        <svg xmlns="http://www.w3.org/2000/svg" width="21" height="31" viewBox="0 0 21 31" fill="none">
+            <path d="M10.5013 30.375V1M10.5013 30.375C7.81706 30.375 2.80216 24.5167 0.917969 23.0313M10.5013 30.375C13.1855 30.375 18.2004 24.5167 20.0846 23.0312" 
+            stroke="#FFFBFB" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </div>
+</section>
+
 
     <section class="media-section">
     <div class="overlay">
-        <img src="{{ asset('images/img5.webp') }}" alt="Media Background">
     </div>
     <div class="media-content">
         <h2>Discover the Perfect Media</h2>
@@ -145,7 +147,7 @@
 
 <section class="about-section">
         <div class="overlay">
-            <img src="{{ asset('images/img6.png') }}" alt="About Us Background">
+            <img src="{{ asset('images/mini-me-2.jpg.jpg') }}" alt="About Us Background">
         </div>
         <div class="about-content">
             <h2>EXPLORE & DOWNLOAD,<br>INSPIRE & CONNECT</h2>
@@ -160,7 +162,7 @@
     </section>
     <section class="explore-section">
         <div class="explore-container">
-        <img src="{{ asset('images/img7.jpg') }}" alt="Explore Content Background">
+        <img src="{{ asset('images/pixy2.jpeg.jpg') }}" alt="Explore Content Background">
             <div class="explore-content">
             <h2>EXPLORE THE <br>CONTENT</h2>
 <div class="explore-options">
@@ -178,16 +180,7 @@
             </div>
         </div>
     </section>
-    <section class="discover-section">
-        <div class="discover-container">
-            <img src="{{ asset('images/img8.jpg') }}" alt="Discover Top Picks Background" class="discover-background">
-            <div class="discover-content">
-                <h2>DISCOVER<br>TOP PICKS</h2>
-                <p>Explore our curated collection of top-rated images, videos, and audios designed to spark your creativity.</p>
-            </div>
-        </div>
-    </section>
-    <section class="contact-section">
+        <section class="contact-section">
         <div class="contact-container">
             <h2>Like to know more?</h2>
             <p class="email">thomasadam83@hotmail.com</p>

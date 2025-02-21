@@ -53,7 +53,7 @@
 }
 /* Media Section */
 .media-section {
-    background: rgba(0, 0, 0, 0.2);
+    background: black;
     width: 100%;
     height: 731px;
     position: relative;
@@ -236,7 +236,7 @@
     object-fit: cover;
     top: 0;
     margin-left: 118px;/* Adjust how much the image shifts left */
-    opacity: 0.7;
+    opacity: 0.4;
     z-index: -1;
 }
 
@@ -309,14 +309,14 @@
 }
 
 .explore-container img {
-    width: 100%;
+    width: 80%;
     height: 100%;
     object-fit: cover;
     position: absolute;
     top: 0;
-    left: 0;
+    left: 114;
     z-index: 0;
-    margin-left: 70px;
+    margin-left: -280px;
 }
 
 .explore-content {

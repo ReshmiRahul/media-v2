@@ -49,32 +49,24 @@
 
     <section class="video-grid">
     @foreach($data as $index => $item)
-        <div class="video-container" onclick="openModal({{ $index }})">
-            <div class="loader"></div>
+    <div class="video-container" onclick="openModal({{ $index }})">
 
-            <!-- Thumbnail Image -->
-            <img id="thumbnail{{ $index }}" class="video-thumbnail" 
-                src="https://drive.google.com/thumbnail?id={{ $item->google_id }}&sz=w250" 
-                alt="Video Thumbnail" 
-                onclick="showVideo({{ $index }})">
-            
-            <!-- Video iframe (Initially Hidden) -->
-            <iframe id="video{{ $index }}" class="video-frame" width="250" height="150" 
-                src="" 
-                allowfullscreen 
-                onload="hideLoader(this)" 
-                style="display: none;">
-            </iframe>
+        <!-- Thumbnail Image (Click to Open Modal) -->
+        <img id="thumbnail{{ $index }}" class="video-thumbnail" 
+            src="https://drive.google.com/thumbnail?id={{ $item->google_id }}&sz=w250" 
+            alt="Video Thumbnail">
+        
+        <!-- Play Button Overlay -->
+        <div class="play-button">&#9658;</div>
 
-            <!-- Play Button Overlay -->
-            <div class="play-button" onclick="showVideo({{ $index }})">&#9658;</div>
-
-            <div class="overlay">
-                <p>{{ $item->name }}</p>
-                <div class="circle">+</div>
-            </div>
+        <div class="overlay">
+            <p>{{ $item->name }}</p>
+            <div class="circle">+</div>
         </div>
-    @endforeach
+    </div>
+@endforeach
+
+
 </section>
 
     <section class="modal" id="videoModal">
@@ -168,34 +160,7 @@
 
             document.getElementById('videoModal').style.display = 'flex';
         }
-        function hideLoader(iframe) {
-                    let loader = iframe.previousElementSibling; // Get the loader div
-                    if (loader) loader.style.display = 'none'; // Hide the loader
-                    iframe.style.visibility = 'visible'; // Show the video
-                }
-                function showVideo(index) {
-    let thumbnail = document.getElementById(`thumbnail${index}`);
-    let videoFrame = document.getElementById(`video${index}`);
-
-    // Replace thumbnail with the video preview
-    videoFrame.src = `https://drive.google.com/file/d/${videos[index].google_id}/preview`;
-    videoFrame.style.display = "block";
     
-    // Hide the thumbnail
-    thumbnail.style.display = "none";
-
-    // Hide play button overlay
-    let playButton = thumbnail.nextElementSibling;
-    if (playButton) playButton.style.display = "none";
-}
-
-function hideLoader(iframe) {
-    let loader = iframe.previousElementSibling;
-    if (loader) loader.style.display = "none"; // Hide the loader
-    iframe.style.visibility = "visible"; // Show the video
-}
-
-
         function closeModal() { 
             document.getElementById('modalVideo').src = ""; // Reset video source
             document.getElementById('videoModal').style.display = 'none'; 
