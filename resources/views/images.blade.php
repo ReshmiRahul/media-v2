@@ -39,12 +39,6 @@
             <h2 class="about-title">IMAGE GALLERY</h2>
         </div>
     </section>
-    <section class="disclaimer">
-        <p>
-            <strong>Disclaimer:</strong> The images, audios, and video footage provided in this gallery are available for media download and use, and must be credited to <strong>BrickMMO</strong> or the photographer specified in the image caption. They cannot be used for advertising, marketing, or to imply endorsement.
-        </p>
-    </section>
-
     <section class="image-grid">
         @foreach($data as $index => $item)
             <div class="image-container" onclick="openModal({{ $index }})">

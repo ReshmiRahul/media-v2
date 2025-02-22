@@ -81,17 +81,6 @@ body {
     z-index: 1;
 }
 
-.disclaimer {
-    background: rgba(255, 255, 255, 0.8);
-    padding: 15px 20px;
-    text-align: center;
-    font-size: 14px;
-    font-weight: 500;
-    color: #333;
-    border-bottom: 2px solid #ccc;
-    margin-bottom: 20px;
-}
-
 .overlay {
     position: absolute;
     top: 0;
