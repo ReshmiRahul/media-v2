@@ -444,3 +444,168 @@
     background: #0092B0;
     transform: scale(1.05);
 }
+
+/* Responsive Styles for Mobile View */
+@media (max-width: 768px) {
+    /* Hero Section */
+    .hero-section {
+        height: 350px;
+        padding-top: 100px;
+    }
+
+    .hero-overlay {
+        height: 350px;
+    }
+
+    .hero-section h1 {
+        font-size: 32px;
+        text-align: center;
+        padding: 0 20px;
+        line-height: 1.2;
+    }
+
+    .scroll-text {
+        font-size: 18px;
+        margin-bottom: 30px;
+    }
+
+    /* Media Section */
+    .media-section {
+        height: 500px;
+        letter-spacing: 3px;
+    }
+
+    .media-content h2 {
+        font-size: 26px;
+    }
+
+    .media-content p {
+        font-size: 16px;
+    }
+
+    /* Search Bar */
+    .search-bar {
+        flex-direction: column;
+        padding: 10px;
+        border-radius: 20px;
+    }
+
+    .search-bar input {
+        width: 100%;
+        font-size: 14px;
+        height: 40px;
+    }
+
+    .search-bar button {
+        width: 100%;
+        font-size: 16px;
+        margin-top: 10px;
+    }
+
+    .search-category {
+        width: 100%;
+        justify-content: center;
+        font-size: 16px;
+    }
+
+    /* About Section */
+    .about-section {
+        height: 600px;
+        text-align: center;
+    }
+
+    .about-content {
+        max-width: 90%;
+        left: 10px;
+        top: 120px;
+    }
+
+    .about-content h2 {
+        font-size: 28px;
+        line-height: 40px;
+    }
+
+    .about-content p {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .about-button {
+        justify-content: center;
+    }
+
+    /* Explore Section */
+    .explore-section {
+        height: auto;
+        padding: 40px 0;
+    }
+
+    .explore-container {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .explore-content {
+        text-align: center;
+        padding: 0 20px;
+        top: 0;
+        left: 0;
+        position: relative;
+    }
+
+    .explore-content h2 {
+        font-size: 30px;
+        margin-bottom: 40px;
+    }
+
+    .explore-options {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .explore-item {
+        width: 240px;
+        font-size: 24px;
+    }
+
+    /* Discover Section */
+    .discover-section {
+        height: auto;
+        padding: 40px 0;
+    }
+
+    .discover-container {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .discover-content {
+        text-align: center;
+        padding: 0 20px;
+        top: 0;
+        left: 0;
+        position: relative;
+    }
+
+    .discover-content h2 {
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+
+    .discover-content p {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .discover-button {
+        width: 220px;
+        font-size: 22px;
+    }
+}
